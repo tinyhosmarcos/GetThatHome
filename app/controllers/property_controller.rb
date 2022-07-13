@@ -14,7 +14,6 @@ class PropertyController < ApplicationController
     # , only: [name, email, phone]
   end
 
-
   def create
     property = Property.new(property_params)
     if property.save
@@ -24,7 +23,6 @@ class PropertyController < ApplicationController
     end
   end
 
-
   def destroy
     property = Property.find(params[:id])
     render json: {status: 'SUCCESS', message: 'Deleted property', data: property}, status: :ok
@@ -33,7 +31,8 @@ class PropertyController < ApplicationController
   ### falta probar
   def update
     property = Property.find(params[:id])
-    if property.update_attribute(property_params)
+
+    if property.update!(property_params)
       render json: { status: 'SUCCESS', message: 'Updated property', data: property }, status: :ok
     else
       render json: { status: 'ERROR', message: 'Property not updated', data: property.errors }, status: :unprocessable_entity
