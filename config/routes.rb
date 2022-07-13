@@ -3,9 +3,6 @@ Rails.application.routes.draw do
   get "/logout" => "sessions#destroy"
   post "/signup" => "users#create"
 
-  get "/user" => "user#index"
-  get "/user/:id" => "user#show"
-
   get "property" => "property#index"
   get "property/:id" => "property#show"
   
