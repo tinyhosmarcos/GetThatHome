@@ -41,12 +41,15 @@ def property_verify(property)
     puts property.errors.full_messages.join(', ')
   end
 end
-apartment1 = Property.create(operation_type: 'rent', address: '86872 Jacob Gateway, Durganport, WV 48044',
-                        monthly_price: '3000', maintenance: 100, property_type: 'apartment',
-                        bedrooms_count: '4', bathrooms_count: '2', area: '180',
+apartment1 = Property.create(operation_type: 0, address: '86872 Jacob Gateway, Durganport, WV 48044',
+                        property_type: 0, monthly_price: 3000, maintenance: 100, 
+                        bedrooms_count: 4, bathrooms_count: 2, area: 180,
                         description: 'Departamento centrico cerca a supermercado, estacion del tren y servicios completos agua, luz, telefono y gas',
                         active_published: true, pets_allowed: true, user_id: 1)
+puts apartment1.property_type
 property_verify(apartment1)
+
+
 
 apartment2 = Property.create(operation_type: 'rent', address: '610 Zieme Ways, Lake Corey, AR 40537-6065',
                         monthly_price: '2500', maintenance: 90, property_type: 'apartment',
