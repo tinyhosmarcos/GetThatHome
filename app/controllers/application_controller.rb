@@ -7,11 +7,11 @@ class ApplicationController < ActionController::API
   end
 
   def authorize
-    authenticate_token || respond_unauthorized
+    authenticate_token || respond_unauthorized("Access Denied")
   end
 
-  def respond_unauthorized
-    render json: { unauthorized: "Invalid token" }, status: :unauthorized
+  def respond_unauthorized(message)
+    render json: { unauthorized: message }, status: :unauthorized
   end
 
   def authenticate_token
