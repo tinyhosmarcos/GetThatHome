@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "sessions#create"
   post "/login" => "sessions#create"
   get "/logout" => "sessions#destroy"
   post "/signup" => "users#create"
