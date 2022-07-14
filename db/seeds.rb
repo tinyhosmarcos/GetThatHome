@@ -22,13 +22,13 @@ end
 
 
 puts 'Seeding Users'
-mathias = User.create(name: 'mathias', email: 'mathias@mail.com', phone: '95254321', password_digest: '123456')
+mathias = User.create(name: 'mathias', email: 'mathias@mail.com', phone: '95254321', password: '123456')
 user_verify(mathias)
-juan = User.create(name: 'juan', email: 'juan@mail.com', phone: '93824323', password_digest: '123456')
+juan = User.create(name: 'juan', email: 'juan@mail.com', phone: '93824323', password: '123456')
 user_verify(juan)
-maria = User.create(name: 'maria', email: 'maria@mail.com', phone: '945654323', password_digest: '123456')
+maria = User.create(name: 'maria', email: 'maria@mail.com', phone: '945654323', password: '123456')
 user_verify(maria)
-divurcio = User.create(name: 'divurcio', email: 'divurcio@mail.com', phone: '92354323', password_digest: '123456')
+divurcio = User.create(name: 'divurcio', email: 'divurcio@mail.com', phone: '92354323', password: '123456')
 user_verify(divurcio)
 
 # marketing.cover.attach(io: File.open("db/images/mkt_cover.png"), filename: "mkt_cover.png")
@@ -41,7 +41,7 @@ def property_verify(property)
     puts property.errors.full_messages.join(', ')
   end
 end
-apartment1 = Property.create(operation_type: 0, address: '86872 Jacob Gateway, Durganport, WV 48044',
+apartment1 = Property.create(operation_type: true, address: '86872 Jacob Gateway, Durganport, WV 48044',
                         property_type: 0, monthly_price: 3000, maintenance: 100, 
                         bedrooms_count: 4, bathrooms_count: 2, area: 180,
                         description: 'Departamento centrico cerca a supermercado, estacion del tren y servicios completos agua, luz, telefono y gas',
