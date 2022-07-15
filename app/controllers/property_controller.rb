@@ -2,18 +2,18 @@ class PropertyController < ApplicationController
   skip_before_action :authorize
   # , only: :index
 
-
   def index
-    @properties = Property.all
-    render json: @properties
+    @properties = Property.where.not(user: current_user)
+    render json: @properties, except: [:created_at, :updated_at,:active_published, :user_id],
+                              methods: [:user]
   end
 
   def show
     @property = Property.find(params[:id])
-    render json: @property
-    # , only: [name, email, phone]
+    render json: @property, except: [:created_at, :updated_at,:active_published, :user_id],
+                              methods: [:user]
   end
-
+  
   def create
     property = Property.new(property_params)
     if property.save

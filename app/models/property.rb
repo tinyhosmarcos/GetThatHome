@@ -14,4 +14,15 @@ class Property < ApplicationRecord
   # validates :operation_type, allow_blank: true
   validates :description, length: { maximum: 500 }, presence: true
   validates :active_published, presence: true
+
+  def user
+    user = User.find(user_id)
+    {
+      user_id: user.id,
+      name: user.name,
+      email: user.email,
+      phone: user.phone
+    }
+  end
+
 end
