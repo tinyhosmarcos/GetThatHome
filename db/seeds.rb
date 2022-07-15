@@ -41,7 +41,7 @@ def property_verify(property)
     puts property.errors.full_messages.join(', ')
   end
 end
-apartment1 = Property.create(operation_type: true, address: '86872 Jacob Gateway, Durganport, WV 48044',
+apartment1 = Property.create(operation_type: true, address: '1500 Sugar Bowl Dr, New Orleans, LA 70112, USA',
                         property_type: 0, monthly_price: 3000, maintenance: 100, 
                         bedrooms_count: 4, bathrooms_count: 2, area: 180,
                         description: 'Departamento centrico cerca a supermercado, estacion del tren y servicios completos agua, luz, telefono y gas',
@@ -51,7 +51,7 @@ property_verify(apartment1)
 
 
 
-apartment2 = Property.create(operation_type: 'rent', address: '610 Zieme Ways, Lake Corey, AR 40537-6065',
+apartment2 = Property.create(operation_type: 'rent', address: 'Avenida San Martín 803, Suero Canto, Obrero, Yauri, Espinar, Cusco, Peru',
                         monthly_price: '2500', maintenance: 90, property_type: 'apartment',
                         bedrooms_count: '3', bathrooms_count: '1', area: '150',
                         description: 'Departamento con completos agua, luz, telefono y gas',
@@ -60,14 +60,14 @@ property_verify(apartment2)
 
 
 # abajo esta bien
-apartment3 = Property.create(operation_type: 'rent', address: 'Apt. 325 29166 Wuckert Heights, Adamland, MT 17471',
+apartment3 = Property.create(operation_type: 'rent', address: 'Nicolás de Pierola Avenue 583, Lima Metropolitan, Lima, Peru',
                         monthly_price: '3800', maintenance: 80, property_type: 'apartment',
                         bedrooms_count: '5', bathrooms_count: '3', area: '200',
                         description: 'Departamento  cerca a estacion del tren y servicios completos agua, luz, telefono y gas',
                         active_published: true, pets_allowed: true, user_id: 3)
 property_verify(apartment3)
 
-casa4 = Property.create(operation_type: 'sale', address: '86872 Jacob Gateway, Durganport, WV 48044',
+casa4 = Property.create(operation_type: 'sale', address: 'Jirón Javier Luna Pizarro 156, Matute, La Victoria,Lima, Peru',
     monthly_price: '200000', property_type: 'house',
     bedrooms_count: '4', bathrooms_count: '2', area: '180',
     description: 'Casa  cerca a estacion del tren y servicios completos agua, luz, telefono y gas',

@@ -1,4 +1,6 @@
 class Property < ApplicationRecord
+  before_save :set_location
+
   belongs_to :user
   # has_many_attached :images, dependent: :destroy
   # https://guides.rubyonrails.org/active_storage_overview.html
@@ -22,6 +24,12 @@ class Property < ApplicationRecord
       email: user.email,
       phone: user.phone
     }
+  end
+
+  def set_location
+    results = Geocoder.search(address)
+    self.latitud = results.first.coordinates[0]
+    self.longitud = results.first.coordinates[1]
   end
   # array of 4 urls of images of the property
   def images
