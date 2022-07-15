@@ -13,9 +13,8 @@ class Property < ApplicationRecord
   # validates :pets_allowed, allow_blank: true
   # validates :operation_type, allow_blank: true
   validates :description, length: { maximum: 500 }, presence: true
-  validates :active_published, presence: true
 
-  def user
+  def owner
     user = User.find(user_id)
     {
       user_id: user.id,
@@ -24,5 +23,10 @@ class Property < ApplicationRecord
       phone: user.phone
     }
   end
-
+  # array of 4 urls of images of the property
+  def images
+    ["https://images.familyhomeplans.com/cdn-cgi/image/fit=scale-down,quality=85/plans/41438/41438-b580.jpg",
+    "https://static.dezeen.com/uploads/2020/02/house-in-the-landscape-niko-arcjitect-architecture-residential-russia-houses-khurtin_dezeen_2364_hero-852x479.jpg",
+    "https://thumbs.dreamstime.com/b/luxury-big-modern-house-electric-car-luxury-modern-house-electric-car-141295838.jpg"]
+  end
 end
