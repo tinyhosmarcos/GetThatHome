@@ -6,7 +6,7 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true
   
-  enum profile_type: { homeseker: 0, landlord: 1 }
+  enum profile_type: { homeseeker: 0, landlord: 1 }
 
   def invalidate_token
     update(token:nil)
