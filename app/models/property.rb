@@ -15,6 +15,9 @@ class Property < ApplicationRecord
   # validates :pets_allowed, allow_blank: true
   # validates :operation_type, allow_blank: true
   validates :description, length: { maximum: 500 }, presence: true
+  
+  enum operation_type: { rent: 0, sale: 1 }
+  enum property_type: { apartment: 0, house: 1 }
 
   def owner
     user = User.find(user_id)
