@@ -4,8 +4,9 @@ class PropertyController < ApplicationController
 
   def index
     @properties = Property.where.not(user: current_user)
-    render json: @properties, except: [:created_at, :updated_at,:active_published, :user_id],
-                              methods: [:owner, :images]
+    # render json: @properties, except: [:created_at, :updated_at,:active_published, :user_id],
+    #                           methods: [:owner, :images, :image_url]
+    render json: Property.all, each_serializer: PropertySerializer, root: false, methods: [:image_url]
   end
 
   def show
@@ -42,6 +43,10 @@ class PropertyController < ApplicationController
   ### falta probar
   private
   def property_params
-    params.permit(:operation_type, :address, :monthly_price, :property_type, :bedrooms_count, :bathrooms_count, :area, :description, :user_id)
+
+    params.require(:property).permit(
+      :operation_type, :address, :monthly_price, :maintenance, :property_type,
+      :bedrooms_count, :bathrooms_count, :area, :pets_allowed, :description,
+      :active_published, :user_id, :image)
   end
 end
