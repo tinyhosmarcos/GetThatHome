@@ -16,6 +16,8 @@ class Property < ApplicationRecord
   # validates :operation_type, allow_blank: true
   validates :description, length: { maximum: 500 }, presence: true
 
+  has_many :status, dependent: :destroy
+
   has_many_attached :image, dependent: :destroy
   
   def owner

@@ -8,6 +8,8 @@ class User < ApplicationRecord
   
   enum profile_type: { homeseker: 0, landlord: 1 }
 
+  has_many :status, dependent: :destroy, through: :properties
+
   def invalidate_token
     update(token:nil)
   end
