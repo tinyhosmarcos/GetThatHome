@@ -4,6 +4,5 @@ class PropertySerializer
             :maintenance, :property_type, :bedrooms_count,
             :bathrooms_count, :area, :pets_allowed,
             :description, :active_published,
-            :user_id, :created_at, :updated_at, :latitud, :longitud,
-            :image, :image_url
+            :user_id, :latitud, :longitud
 end

@@ -48,6 +48,8 @@ apartment1 = Property.create(operation_type: true, address: '1500 Sugar Bowl Dr,
                         description: 'Departamento centrico cerca a supermercado, estacion del tren y servicios completos agua, luz, telefono y gas',
                         active_published: true, pets_allowed: true, user_id: 1)
 apartment1.image.attach(io: File.open("db/images/Rectangle 17house (1).png"), filename: "apartment1.png")
+apartment1.image.attach(io: File.open("db/images/Rectangle 17house (2).png"), filename: "apartment2.png")
+apartment1.image.attach(io: File.open("db/images/Rectangle 17house (3).png"), filename: "apartment3.png")
 
 puts apartment1.property_type
 property_verify(apartment1)

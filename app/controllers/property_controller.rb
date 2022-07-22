@@ -6,7 +6,7 @@ class PropertyController < ApplicationController
     @properties = Property.where.not(user: current_user)
     # render json: @properties, except: [:created_at, :updated_at,:active_published, :user_id],
     #                           methods: [:owner, :images, :image_url]
-    render json: Property.all, each_serializer: PropertySerializer, root: false, methods: [:image_url]
+    render json: Property.all, each_serializer: PropertySerializer, root: false, methods: [:image_url], except: [:created_at, :updated_at]
   end
 
   def show
