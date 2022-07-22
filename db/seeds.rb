@@ -30,7 +30,8 @@ maria = User.create(name: 'maria', email: 'maria@mail.com', phone: '945654323', 
 user_verify(maria)
 divurcio = User.create(name: 'divurcio', email: 'divurcio@mail.com', phone: '92354323', password: '123456')
 user_verify(divurcio)
-
+yhos = User.create(name: 'yhos', email: "yhost@mail.com", phone: '92354323', password: '123456')
+user_verify(yhos)
 # marketing.cover.attach(io: File.open("db/images/mkt_cover.png"), filename: "mkt_cover.png")
 def property_verify(property)
   if property.save
@@ -46,6 +47,8 @@ apartment1 = Property.create(operation_type: true, address: '1500 Sugar Bowl Dr,
                         bedrooms_count: 4, bathrooms_count: 2, area: 180,
                         description: 'Departamento centrico cerca a supermercado, estacion del tren y servicios completos agua, luz, telefono y gas',
                         active_published: true, pets_allowed: true, user_id: 1)
+apartment1.image.attach(io: File.open("db/images/Rectangle 17house (1).png"), filename: "apartment1.png")
+
 puts apartment1.property_type
 property_verify(apartment1)
 
@@ -56,6 +59,8 @@ apartment2 = Property.create(operation_type: 'rent', address: 'Avenida San Mart�
                         bedrooms_count: '3', bathrooms_count: '1', area: '150',
                         description: 'Departamento con completos agua, luz, telefono y gas',
                         active_published: true, pets_allowed: true, user_id: 2)
+apartment2.image.attach(io: File.open("db/images/Rectangle 17house (2).png"), filename: "apartment2.png")
+                
 property_verify(apartment2)
 
 
@@ -65,11 +70,31 @@ apartment3 = Property.create(operation_type: 'rent', address: 'Nicolás de Piero
                         bedrooms_count: '5', bathrooms_count: '3', area: '200',
                         description: 'Departamento  cerca a estacion del tren y servicios completos agua, luz, telefono y gas',
                         active_published: true, pets_allowed: true, user_id: 3)
+apartment3.image.attach(io: File.open("db/images/Rectangle 17house (3).png"), filename: "apartment3.png")
+
 property_verify(apartment3)
+
 
 casa4 = Property.create(operation_type: 'sale', address: 'Jirón Javier Luna Pizarro 156, Matute, La Victoria,Lima, Peru',
     monthly_price: '200000', property_type: 'house',
     bedrooms_count: '4', bathrooms_count: '2', area: '180',
     description: 'Casa  cerca a estacion del tren y servicios completos agua, luz, telefono y gas',
     active_published: true, pets_allowed: true, user_id: 4)
+casa4.image.attach(io: File.open("db/images/Rectangle 17house (4).png"), filename: "casa4.png")
 property_verify(casa4)
+
+casa5 = Property.create(operation_type: 'sale', address: 'Av. Juan Pablo II 583, Lima, Peru',
+    monthly_price: '200000', property_type: 'house',
+    bedrooms_count: '4', bathrooms_count: '2', area: '180',
+    description: 'Casa  cerca a estacion del tren y servicios completos agua, luz, telefono y gas',
+    active_published: true, pets_allowed: true, user_id: 5)
+casa5.image.attach(io: File.open("db/images/Rectangle 17house (5).png"), filename: "casa5.png")
+property_verify(casa5)
+
+casa6 = Property.create(operation_type: 'sale', address: 'Av. Juan Pablo II 583, Lima, Peru',
+    monthly_price: '200000', property_type: 'house',
+    bedrooms_count: '4', bathrooms_count: '6', area: '324',
+    description: 'Casa  cerca a estacion del tren y servicios completos agua, luz, telefono y gas',
+    active_published: true, pets_allowed: true, user_id: 3)
+casa6.image.attach(io: File.open("db/images/Rectangle 17house (6).png"), filename: "casa6.png")
+property_verify(casa6)
