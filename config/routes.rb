@@ -11,5 +11,11 @@ Rails.application.routes.draw do
   delete "property/:id" => "property#destroy"
   
   ### falta 
-  patch "property/:id" => "property#update" 
+  patch "property/:id"   => "property#update" 
+
+  post "status" => "statuses#create"
+  get "user/:id/status" => "statuses#index"
+  get "user/:id/status/:id" => "statuses#show"
+  delete "status/:id" => "statuses#destroy"
+  
 end
